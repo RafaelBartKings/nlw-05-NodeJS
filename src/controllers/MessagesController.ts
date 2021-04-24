@@ -8,6 +8,8 @@ class MessagesController {
         const { admin_id, text, user_id } = request.body;
         const messagesService = new MessagesService();
 
+        console.log('~message sent', request.body);
+
 
         const message = await messagesService.create({
             admin_id,

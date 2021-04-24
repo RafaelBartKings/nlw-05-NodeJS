@@ -1,4 +1,5 @@
 //import { Socket } from "socket.io";
+import { SimpleConsoleLogger } from "typeorm";
 import { io } from "../http";
 import { ConnectionsService } from "../services/ConnectionsService";
 import { MessagesService } from "../services/MessagesService";
@@ -72,6 +73,10 @@ io.on("connect", (socket) => {
             text,
             user_id,
         });
+
+        console.log('~enviando', message);
+        console.log('~enviand ioo', io);
+        console.log('~enviand socket', socket_id);
 
         io.to(socket_admin_id).emit("admin_receive_message", {
             message, 
