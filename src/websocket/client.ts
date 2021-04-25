@@ -74,10 +74,6 @@ io.on("connect", (socket) => {
             user_id,
         });
 
-        console.log('~enviando', message);
-        console.log('~enviand ioo', io);
-        console.log('~enviand socket', socket_id);
-
         io.to(socket_admin_id).emit("admin_receive_message", {
             message, 
             socket_id,

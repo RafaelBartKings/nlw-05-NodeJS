@@ -20,7 +20,7 @@ io.on("connect", async socket => {
     });
 
     socket.on("admin_send_message", async params => {
-        console.log('~receveid', params);
+        //  console.log('~receveid', params);
         const { user_id, text } = params;
 
         await messagesServive.create({
